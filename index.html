@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Відвідування">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Відвідування</title>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <h1>Відвідування</h1>
+    <small>Календар і відмітки студентів</small>
+  </div>
+
+  <button id="manage">👥</button>
+</header>
+
+<main>
+
+  <section class="card">
+
+    <div class="month">
+      <button id="prev">‹</button>
+      <b id="month"></b>
+      <button id="next">›</button>
+    </div>
+
+    <div class="week">
+      <span>Пн</span>
+      <span>Вт</span>
+      <span>Ср</span>
+      <span>Чт</span>
+      <span>Пт</span>
+      <span>Сб</span>
+      <span>Нд</span>
+    </div>
+
+    <div id="calendar" class="calendar"></div>
+
+  </section>
+
+
+  <section class="card">
+
+    <b id="selected"></b>
+
+    <div id="lessons" class="lessons"></div>
+
+  </section>
+
+
+  <section class="card">
+
+    <div class="title">
+
+      <b>Студенти</b>
+
+      <button id="add">
+        ＋ Додати
+      </button>
+
+    </div>
+
+    <div id="attendance"></div>
+
+  </section>
+
+</main>
+
+
+<!-- Вікно студентів -->
+
+<div id="modal" class="modal hidden">
+
+  <div class="box">
+
+    <div class="head">
+
+      <b>Студенти</b>
+
+      <button data-close>×</button>
+
+    </div>
+
+    <div class="addrow">
+
+      <input
+        id="name"
+        placeholder="Ім'я та прізвище"
+      >
+
+      <button id="saveStudent">
+        Додати
+      </button>
+
+    </div>
+
+    <div id="list"></div>
+
+  </div>
+
+</div>
+
+
+<!-- Вибір відмітки -->
+
+<div id="markModal" class="modal hidden">
+
+  <div class="box small">
+
+    <div class="head">
+
+      <b>Відмітка</b>
+
+      <button data-close>×</button>
+
+    </div>
+
+    <div class="marks">
+
+      <button data-mark="">—</button>
+      <button data-mark="Н">Н</button>
+      <button data-mark="+">+</button>
+      <button data-mark="Х">Х</button>
+      <button data-mark="П">П</button>
+      <button data-mark="О">О</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

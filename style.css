@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f4f6;
+  color: #111827;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  background: white;
+
+  padding: 14px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+small {
+  color: #6b7280;
+}
+
+header button,
+.month button,
+.head button {
+  border: 0;
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  font-size: 22px;
+
+  width: 42px;
+  height: 42px;
+}
+
+main {
+  max-width: 720px;
+  margin: auto;
+
+  padding: 14px;
+}
+
+.card {
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 14px;
+
+  margin-bottom: 14px;
+
+  box-shadow: 0 2px 12px #0000000d;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.week,
+.calendar {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  gap: 5px;
+}
+
+.week span {
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  padding: 5px;
+}
+
+.day {
+  border: 0;
+
+  background: #f9fafb;
+
+  border-radius: 11px;
+
+  min-height: 42px;
+}
+
+.day.other {
+  color: #bbb;
+}
+
+.day.selected {
+  background: #111827;
+
+  color: white;
+}
+
+.day.today {
+  outline: 2px solid #6366f1;
+}
+
+.lessons {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap: 6px;
+
+  margin-top: 10px;
+}
+
+.lesson,
+.title button {
+  border: 1px solid #ddd;
+
+  background: #f9fafb;
+
+  border-radius: 10px;
+
+  padding: 10px 3px;
+
+  font-weight: 700;
+}
+
+.lesson.active {
+  background: #111827;
+
+  color: white;
+}
+
+.title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 8px;
+}
+
+.title button,
+.addrow button {
+  background: #111827;
+
+  color: white;
+
+  border: 0;
+}
+
+.student {
+  display: grid;
+
+  grid-template-columns:
+    1fr 58px;
+
+  padding: 10px 0;
+
+  border-top: 1px solid #eee;
+
+  align-items: center;
+}
+
+.mark {
+  border: 1px solid #ddd;
+
+  background: #f9fafb;
+
+  border-radius: 10px;
+
+  padding: 9px;
+
+  font-weight: 800;
+}
+
+.modal {
+  position: fixed;
+
+  inset: 0;
+
+  background: #0007;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.box {
+  background: white;
+
+  width: min(720px, 100%);
+
+  border-radius:
+    22px 22px 0 0;
+
+  padding: 16px;
+
+  max-height: 85vh;
+
+  overflow: auto;
+}
+
+.small {
+  max-width: 380px;
+}
+
+.head {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 18px;
+
+  margin-bottom: 14px;
+}
+
+.addrow {
+  display: flex;
+
+  gap: 8px;
+}
+
+.addrow input {
+  flex: 1;
+
+  padding: 11px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+.addrow button {
+  padding: 10px;
+
+  border-radius: 10px;
+}
+
+.person {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 11px 0;
+
+  border-top: 1px solid #eee;
+}
+
+.del {
+  border: 0;
+
+  background: #fee2e2;
+
+  color: #991b1b;
+
+  border-radius: 9px;
+
+  padding: 7px;
+}
+
+.marks {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.marks button {
+  padding: 16px;
+
+  border: 1px solid #ddd;
+
+  background: #f9fafb;
+
+  border-radius: 13px;
+
+  font-weight: 700;
+
+  font-size: 18px;
+}
+
+@media (min-width: 600px) {
+
+  .modal {
+    align-items: center;
+  }
+
+  .box {
+    border-radius: 22px;
+  }
+
+}
